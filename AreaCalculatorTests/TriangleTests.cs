@@ -10,7 +10,7 @@ namespace AreaCalculatorTests
         //TODO use fluent assertion
         [TestCase(3, 4, 5,ExpectedResult = 6)]
         [TestCase(0, 0, 0, ExpectedResult = 0)]
-        public double GetArea_CalculateValidArea(int a, int b, int c)
+        public double GetArea_CalculateValidAreaWithCorrectData(int a, int b, int c)
         {
             var triangle = new Triangle(a, b, c);
 

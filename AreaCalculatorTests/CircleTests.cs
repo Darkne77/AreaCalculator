@@ -9,7 +9,7 @@ namespace AreaCalculatorTests
     {
         [TestCase(8, ExpectedResult = 201.0619)]
         [TestCase(0, ExpectedResult = 0)]
-        public double GetArea_CalculateValidArea(int radius)
+        public double GetArea_CalculateValidAreaWithCorrectData(int radius)
         {
             var circle = new Circle(radius);
 

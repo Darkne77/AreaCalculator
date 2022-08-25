@@ -9,7 +9,7 @@ namespace AreaCalculator
         public int B { get; }
         public int C { get; }
 
-        public double HalfP => 1 / 2.0 * (A + B + C);
+        public double HalfParameter => 1 / 2.0 * (A + B + C);
 
         public Triangle(int a, int b, int c)
         {
@@ -33,7 +33,7 @@ namespace AreaCalculator
         /// </summary>
         public override double GetArea()
         {
-            return Math.Sqrt(HalfP * (HalfP - A) * (HalfP - B) * (HalfP - C));
+            return Math.Sqrt(HalfParameter * (HalfParameter - A) * (HalfParameter - B) * (HalfParameter - C));
         }
     }
 }
