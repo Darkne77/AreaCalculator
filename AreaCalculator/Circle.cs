@@ -1,4 +1,5 @@
 using System;
+using AreaCalculator.Exceptions;
 
 namespace AreaCalculator
 {
@@ -9,11 +10,24 @@ namespace AreaCalculator
         public Circle(double radius)
         {
             Radius = radius;
+            
+            if (!IsCircleValid())
+            {
+                throw new InvalidCircleRadiusException();
+            }
         }
 
+        private bool IsCircleValid()
+        {
+            return Radius >= 0;
+        }
+
+        /// <summary>
+        /// Get circle area.
+        /// </summary>
         public override double GetArea()
         {
-            return Math.PI * Radius * Radius;
+           return Math.PI * Radius * Radius;
         }
     }
 }
