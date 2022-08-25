@@ -6,7 +6,6 @@ namespace AreaCalculatorTests.Helpers
 {
     public class TriangleExtensionTests
     {
-        //TODO use fluent assertion
         [TestCase(3, 4, 5,ExpectedResult = true)]
         [TestCase(4, 4, 4,ExpectedResult = false)]
         [TestCase(0, 0, 0,ExpectedResult = true)]
