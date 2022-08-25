@@ -1,6 +1,7 @@
 ﻿using System;
 using AreaCalculator;
 using AreaCalculator.Exceptions;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace AreaCalculatorTests
@@ -22,9 +23,9 @@ namespace AreaCalculatorTests
         [TestCase(7000, 1, 2)]
         public void Constructor_ThrowInvalidTriangleSidesExceptionWhenSidesIsInvalid(int a, int b, int c)
         {
-            TestDelegate act = () => new Triangle(a, b, c);
-            
-            Assert.Throws<InvalidTriangleSidesException>(act);
+            Action act = () => new Triangle(a, b, c);
+
+            act.Should().Throw<InvalidTriangleSidesException>();
         }
     }
 }

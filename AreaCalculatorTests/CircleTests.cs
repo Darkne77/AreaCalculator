@@ -1,6 +1,7 @@
 using System;
 using AreaCalculator;
 using AreaCalculator.Exceptions;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace AreaCalculatorTests
@@ -21,9 +22,9 @@ namespace AreaCalculatorTests
         [TestCase(-1)]
         public void Constructor_ThrowInvalidCircleRadiusExceptionWhenRadiusIsInvalid(int radius)
         {
-            TestDelegate act = () => new Circle(radius);
-            
-            Assert.Throws<InvalidCircleRadiusException>(act);
+            Action act = () => new Circle(radius);
+
+            act.Should().Throw<InvalidCircleRadiusException>();
         }
     }
 }
